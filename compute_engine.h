@@ -1,7 +1,6 @@
 #include "SIMD_float.h"
 
 
-
 template <typename T, size_t num_arrays, size_t array_size>
 class weaved_array {
 public:
@@ -57,9 +56,4 @@ void weaved_array<T, num_arrays, array_size>::set(size_t array_index, size_t ele
         throw std::out_of_range("Index out of range");
     }
     arrays[array_index][element_index] = value;
-}ray_size>::set(size_t array_index, size_t element_index, const T& value) {
-    if (array_index >= num_arrays || element_index >= array_size) {
-        throw std::out_of_range("Index out of range");
-    }
-    arrays[array_index][element_index * num_arrays] = value;
 }
